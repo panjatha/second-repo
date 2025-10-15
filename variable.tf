@@ -1,19 +1,21 @@
 variable "rgname" {
     description = "Name of RG name"
     type = string
+    default = "rgname"
   
 }
 
 variable "location" {
     description = "Name of RG location"
     type = string
-    default = "East US"
+
   
 }
 
 variable "storagename" {
     description = "Name of Azure Storage Account"
     type = string
+    default = "storagename"
   
 }
 
