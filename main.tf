@@ -4,10 +4,10 @@ resource "azurerm_resource_group" "rgname" {
   
 }
 
-resource "azurerm_storage_account" "storage" {
+resource "azurerm_storage_account" "storagename" {
     name = var.storagename
     resource_group_name =  azurerm_resource_group.rgname
-    location = azurerm_resource_group.name.location
+    location = azurerm_resource_group.location
     account_tier = var.account_tier
     account_replication_type = var.account_replication_type
 tags = {
@@ -19,7 +19,7 @@ tags = {
 
 resource "azurerm_storage_container" "container" {
   name                  = var.container_name
-  storage_account_name  = azurerm_resource_group.rgname
+  storage_account_name  = azurerm_resource_group.storagename
   container_access_type = "private"
 }
   

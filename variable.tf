@@ -37,5 +37,5 @@ variable "storagetag" {
 variable "container_name" {
   description = "Name of azure container name"
   type        = string
-  default     = "dev"
+  default     = "azurecontaniner"
 }
