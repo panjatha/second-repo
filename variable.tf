@@ -1,43 +1,39 @@
-variable "rgname" {
-    description = "Name of RG name"
-    type = string
-    default = "rgname"
-  
+variable "rg_name" {
+  description = "Name of the resource group"
+  type        = string
 }
 
 variable "location" {
-    description = "Name of RG location"
-    type = string
-
-  
+  description = "Azure region for the resources"
+  type        = string
+  default     = "East US"
 }
 
-variable "storagename" {
-    description = "Name of Azure Storage Account"
-    type = string
-    default = "storagename"
-  
+variable "storage_account_name" {
+  description = "Name of the Azure Storage Account (must be globally unique)"
+  type        = string
 }
 
 variable "account_tier" {
-    description = "Name of azure storage Account Tier"
-   type = string
-   default = "Standard"
-}
-variable "account_replication_type" {
-    description = "Name of Azure Storage Account Replication type"
-  type = string
-  default = "LRS"
+  description = "Storage account tier"
+  type        = string
+  default     = "Standard"
 }
 
-variable "storagetag" {
-  description = "Environment tag"
+variable "replication_type" {
+  description = "Replication type for storage account"
   type        = string
-  default     = "dev"
+  default     = "LRS"
 }
 
 variable "container_name" {
-  description = "Name of azure container name"
+  description = "Blob container name"
   type        = string
-  default     = "azurecontaniner"
+  default     = "tf-container"
+}
+
+variable "environment" {
+  description = "Environment tag"
+  type        = string
+  default     = "dev"
 }
